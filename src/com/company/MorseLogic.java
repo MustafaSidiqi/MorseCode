@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class MorseLogic {
@@ -36,6 +37,7 @@ public class MorseLogic {
 
     public String convertToText(String str){
         if(str != null && str.length() > 0){
+            str.toLowerCase();
             String result = "";
             String arrSplit[] = str.split(" ");
             for (String tmp: arrSplit) {
@@ -48,6 +50,7 @@ public class MorseLogic {
 
     public String convertToMorse(String str) {
         if(str != null && str.length() > 0){
+            str = str.toLowerCase();
             String result = "";
             char[] chars = str.toCharArray();
             for (char ch: chars) {

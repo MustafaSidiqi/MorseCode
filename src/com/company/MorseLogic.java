@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MorseLogic {
-    private String[] englishArray = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+    private String[] letterArray = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
             "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
             ",", ".", "?", " "};
@@ -15,19 +15,23 @@ public class MorseLogic {
             "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",
             "-----", "--..--", ".-.-.-", "..--..", "/" };
 
-    private static final Map<String, String> letterToMorseMap = new HashMap<>();
-
-
-    private static final Map<String, String> morseToLetterMap = new HashMap<>();
+    private static final Map<String, String> completeMap = new HashMap<>();
 
     MorseLogic(){
-        for (int i = 0; i < englishArray.length; ++i) {
-            letterToMorseMap.put(englishArray[i], morseArray[i]);
+        for (int i = 0; i < letterArray.length; ++i) {
+            completeMap.put(letterArray[i], morseArray[i]);
         }
 
-        for (int i = 0; i < englishArray.length; ++i) {
-            morseToLetterMap.put(morseArray[i], englishArray[i]);
+        for (int i = 0; i < letterArray.length; ++i) {
+            completeMap.put(morseArray[i], letterArray[i]);
         }
+    }
+
+    public String getItem(String key) {
+        if(key != null && key.length() > 0 && completeMap.containsKey(key)){
+            return completeMap.get(key);
+        }
+        return "invalid key";
     }
 
     public String convertToText(String str){
@@ -35,22 +39,22 @@ public class MorseLogic {
             String result = "";
             String arrSplit[] = str.split(" ");
             for (String tmp: arrSplit) {
-                result += (morseToLetterMap.get(tmp));
+                result += (getItem(tmp));
             }
             return result;
         }
-        return "Invalid input";
+        return "invalid input";
     }
 
     public String convertToMorse(String str) {
         if(str != null && str.length() > 0){
             String result = "";
-            String arrSplit[] = str.split(" ");
-            for (String tmp: arrSplit) {
-                result += (letterToMorseMap.get(tmp));
+            char[] chars = str.toCharArray();
+            for (char ch: chars) {
+                result += (getItem(Character.toString(ch))) + " ";
             }
-            return result;
+            return result.substring(0,result.length() - 1);
         }
-        return "Invalid input";
+        return "invalid input";
     }
 }

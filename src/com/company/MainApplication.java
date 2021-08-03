@@ -7,13 +7,13 @@ public class MainApplication {
         System.out.println("Welcome - MorseCode");
         TextIO textIO = new TextIO();
         MorseLogic morseLogic = new MorseLogic();
-        String s[] = textIO.readUserInput();
 
-        for (String tmp: s) {
-            System.out.println(morseLogic.convertToText(tmp));
+        while(true) {
+            String s[] = textIO.readMorseInput();
+            for (String tmp: s) {
+                System.out.print(morseLogic.convertToMorse(tmp));
+            }
+            System.out.println();
         }
-        //textIO.readUserInput();
-
-
     }
 }

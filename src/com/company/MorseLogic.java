@@ -7,13 +7,13 @@ public class MorseLogic {
     private String[] englishArray = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
             "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
             "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-            ",", ".", "?"};
+            ",", ".", "?", " "};
 
     private String[] morseArray = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
             ".---", "-.-", ".-..", "--", "-.", "---", ".---.", "--.-", ".-.",
             "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----",
             "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",
-            "-----", "--..--", ".-.-.-", "..--.." };
+            "-----", "--..--", ".-.-.-", "..--..", "/" };
 
     private static final Map<String, String> letterToMorseMap = new HashMap<>();
 
@@ -30,7 +30,17 @@ public class MorseLogic {
         }
     }
 
-    public String convertToText(String ch){
-        return morseToLetterMap.get(ch);
+    public String convertToText(String str){
+        if(str != null && str.length() > 0){
+            return morseToLetterMap.get(str);
+        }
+        return "Invalid input";
+    }
+
+    public String convertToMorse(String str) {
+        if(str != null && str.length() > 0){
+            return letterToMorseMap.get(str);
+        }
+        return "Invalid input";
     }
 }

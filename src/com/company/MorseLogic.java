@@ -32,14 +32,24 @@ public class MorseLogic {
 
     public String convertToText(String str){
         if(str != null && str.length() > 0){
-            return morseToLetterMap.get(str);
+            String result = "";
+            String arrSplit[] = str.split(" ");
+            for (String tmp: arrSplit) {
+                result += (morseToLetterMap.get(tmp));
+            }
+            return result;
         }
         return "Invalid input";
     }
 
     public String convertToMorse(String str) {
         if(str != null && str.length() > 0){
-            return letterToMorseMap.get(str);
+            String result = "";
+            String arrSplit[] = str.split(" ");
+            for (String tmp: arrSplit) {
+                result += (letterToMorseMap.get(tmp));
+            }
+            return result;
         }
         return "Invalid input";
     }

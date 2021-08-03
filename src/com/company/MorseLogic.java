@@ -35,6 +35,12 @@ public class MorseLogic {
         return "invalid key";
     }
 
+    public void putItem(String key, String val) {
+        if(key != null && key.length() > 0 && val != null && val.length() >0 ){
+            completeMap.put(key, val);
+        }
+    }
+
     public String convertToText(String str){
         if(str != null && str.length() > 0){
             str.toLowerCase();

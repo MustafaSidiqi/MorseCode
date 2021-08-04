@@ -6,7 +6,6 @@ class MorseLogicTest {
 
     @org.junit.jupiter.api.Test
     void MorseToLetter1() {
-        TextIO textIO = new TextIO();
         MorseLogic morseLogic = new MorseLogic();
         String result = morseLogic.convertToText("--");
         String actual = "m";
@@ -15,7 +14,6 @@ class MorseLogicTest {
 
     @org.junit.jupiter.api.Test
     void MorseToLetter2() {
-        TextIO textIO = new TextIO();
         MorseLogic morseLogic = new MorseLogic();
         String result = morseLogic.convertToText("... --- ...");
         String actual = "sos";

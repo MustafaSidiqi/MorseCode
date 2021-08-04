@@ -15,11 +15,11 @@ The logic is located in the file "MorseLogic".
 The main function in the file "MainApplication" can be run where a simple menu has been implemented in the console. 
 You will be presented the following menu if you run main function. 
 
-Welcome - MorseCode
-|   MENU SELECTION              |
-| Options:                      |
-|        0. Exit                |
-|        1. Convert to morse    |
-|        2. Convert to text     |
-Select option: 
+Welcome - MorseCode  
+|   MENU SELECTION              |  
+| Options:                      |  
+|        0. Exit                |  
+|        1. Convert to morse    |  
+|        2. Convert to text     |  
+Select option:   
 

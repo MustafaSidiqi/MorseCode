@@ -7,8 +7,8 @@ You can convert perform the folling tasks
 1. Convert any char or string of morse to readable text 
 2. Convert any char or string of text to morse. 
 
-The project has been developed focused on test driven development. There are 10 JUNIT test in the project. 
-The test are located in the file "MorseLogicTest" and can be run by going to the file and run the file. 
+The project has been developed focused on test driven development. There are 10 JUNIT tests in the project. 
+The tests are located in the file "MorseLogicTest" and can be run by going to the file and run the file. 
 
 The logic is located in the file "MorseLogic".
 
